@@ -7,9 +7,7 @@ public class Data {
     private ArrayList<String> planetes;
     private String[] taillePlanetes = {"4900", "12000", "12800", "6800", "144000", "120000", "52000", "50000", "2300"};
 
-    public Data() {
-        this.planetes = new ArrayList<>();
-    }
+
 
 
     public ArrayList<String> getPlanetes() {
@@ -32,5 +30,8 @@ public class Data {
         planetes.add("Uranus");
         planetes.add("Neptune");
         planetes.add("Pluton");
+    }
+    public Data() {
+        installePlanetes();
     }
 }

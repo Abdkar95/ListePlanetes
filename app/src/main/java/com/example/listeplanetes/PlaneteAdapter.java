@@ -23,10 +23,10 @@ public class PlaneteAdapter extends BaseAdapter {
     public static int nb=0;
 
     public PlaneteAdapter(MainActivity mainActivityContext, Data data) {
-        this.planetes = data.getPlanetes();
+        this.mainActivityContext = mainActivityContext;
         this.data = data;
         this.planetes= data.getPlanetes();
-        this.mainActivityContext = mainActivityContext;
+
     }
 
     @Override

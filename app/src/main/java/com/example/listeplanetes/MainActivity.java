@@ -33,20 +33,22 @@ public class MainActivity extends AppCompatActivity {
 
         checkBtn = findViewById(R.id.button);
 
-        checkBtn.setOnClickListener((view) -> {
-                    int score = 0;
-                    String[] taillesPlanetes = data.getTaillePlanetes();
-                    for(int i=0; i<taillesPlanetes.length; i++) {
-                        View vw = listview.getChildAt(i);
-                        spinner = vw.findViewById(R.id.spinner);
-                        if (spinner.getSelectedItem().toString().equals(taillesPlanetes[i])) {
-                            score += 1;
-                        }
+        checkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int score = 0;
+                String[] taillesPlanetes = data.getTaillePlanetes();
+                for(int i=0; i<taillesPlanetes.length; i++) {
+                    View vw = listview.getChildAt(i);
+                    spinner = vw.findViewById(R.id.spinner);
+                    if (spinner.getSelectedItem().toString().equals(taillesPlanetes[i])) {
+                        score += 1;
                     }
-                    Toast.makeText(MainActivity.this, "Score : "+score+"/"+taillesPlanetes.length, Toast.LENGTH_LONG).show();
-                });
+                }
+                Toast.makeText(MainActivity.this, "Score : "+score+"/"+taillesPlanetes.length, Toast.LENGTH_LONG).show();
 
-
+            }
+        });
 
 }
 }
